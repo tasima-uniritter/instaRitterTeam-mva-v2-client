@@ -10,7 +10,7 @@ describe('PhotoTest', () => {
     photo = getFotoCompleta()
   })
 
-  it('Deve exibir mensagem de obrigatoriedade para o campo nome usuario', () => {
+  it('Deve exibir mensagem de obrigatoriedade para o nome usuario', () => {
     photo.nomeUsuario = " "
     expect(() => service.validar(photo)).toThrow(new Error("Informe o nome do usuário."))
 
@@ -23,7 +23,7 @@ describe('PhotoTest', () => {
     expect(() => service.validar(photo)).toThrow(new Error("Selecione a imagem."))
   })
 
-  it('Deve exibir mensagem de obrigatoriedade para o campo legenda', () => {
+  it('Deve exibir mensagem de obrigatoriedade para a legenda', () => {
     photo.legenda = " "
     expect(() => service.validar(photo)).toThrow(new Error("Informe a legenda."))
 
@@ -31,9 +31,13 @@ describe('PhotoTest', () => {
     expect(() => service.validar(photo)).toThrow(new Error("Informe a legenda."))
   })
 
-  it('Deve exibir mensagem de obrigatoriedade quando data nao informada', () => {
+  it('Deve exibir mensagem de obrigatoriedade para a data', () => {
     photo.data = null
     expect(() => service.validar(photo)).toThrow(new Error("Informe a data."))
+  })
+
+  it('Nao deve exibir mensagem quando todos dados estiverem preenchidos', () => {
+    expect(() => service.validar(photo)).toBeTruthy()
   })
 })
 
