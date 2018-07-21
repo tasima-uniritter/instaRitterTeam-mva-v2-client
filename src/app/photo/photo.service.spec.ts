@@ -17,4 +17,13 @@ describe('PhotoTest', () => {
     photo.legenda = null
     expect(() => service.validar(photo)).toThrow(new Error("Informe a legenda."))
   })
+
+  it('Deve exibir mensagem de obrigatoriedade para o campo nome usuario', () => {
+    photo.legenda = "Visitando a capital do Chile."
+    photo.nomeUsuario = " "
+    expect(() => service.validar(photo)).toThrow(new Error("Informe o nome do usuário."))
+
+    photo.nomeUsuario = null
+    expect(() => service.validar(photo)).toThrow(new Error("Informe o nome do usuário."))
+  })
 })
