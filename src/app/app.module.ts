@@ -4,6 +4,7 @@ import { HttpModule} from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PhotoModule } from './photo/photo.module';
+import { GenericProvider } from '../provider/generic.provider';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { PhotoModule } from './photo/photo.module';
     FormsModule,
     PhotoModule
   ],
-  providers: [],
+  providers: [GenericProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
