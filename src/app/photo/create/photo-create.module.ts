@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PhotoCreateComponent } from './photo-create.component';
 import { PhotoCreateService } from './photo-create.service';
-import { FormsModule } from '../../../../node_modules/@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [PhotoCreateComponent],

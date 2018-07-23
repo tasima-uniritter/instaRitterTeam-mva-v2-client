@@ -5,21 +5,26 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class GenericProvider {
 
-  url: string = 'URL';
-  
+  private url: string = 'localhost:8080/';
+  private _OPTIONS: RequestOptions = this.createDefaultRequestOptions();
+
   constructor(private http: Http) {
   }
 
-  getOptions(): RequestOptions {
-    let headers = new Headers({ 'Content-Type': 'application/json' });
-    return new RequestOptions({ headers: headers })
-  }
-
   post(body, endPoint): Observable<any> {
-    return this.http.post(this.url+endPoint,JSON.stringify(body),this.getOptions())
+    return this.http.post(this.url + endPoint, JSON.stringify(body), this._OPTIONS)
   }
 
   get(endPoint): Observable<any> {
-    return this.http.get(this.url+endPoint,this.getOptions())
+    return this.http.get(this.url + endPoint, this._OPTIONS)
+  }
+
+  delete(endPoint, id): Observable<any> {
+    return this.http.delete(this.url + endPoint + id, this._OPTIONS)
+  }
+
+  createDefaultRequestOptions(): RequestOptions {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    return new RequestOptions({ headers: headers })
   }
 }
