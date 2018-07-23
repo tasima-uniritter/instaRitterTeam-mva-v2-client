@@ -9,7 +9,7 @@ import { PhotoCreateModule } from './create/photo-create.module';
   imports: [
     PhotoCreateModule
   ],
-  providers: [],
-  bootstrap: [PhotoComponent]
+  exports: [PhotoComponent],
+  providers: []
 })
 export class PhotoModule { }

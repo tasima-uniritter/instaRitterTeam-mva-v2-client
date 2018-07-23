@@ -1,0 +1,23 @@
+<div class="container">
+    <div [hidden]="submitted">
+        <h3>Nova Postagem</h3>
+        <form (ngSubmit)="onSubmit()" #photoForm="ngForm">
+            <div class="form-group">
+                <label for="name">Nome usuário</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="model.nomeUsuario" name="name" #name="ngModel">
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Informe o nome.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!photoForm.form.valid" (click)="salvar()">Salvar</button>
+            <button type="button" class="btn btn-default" (click)="resetar(); photoForm.reset()">Limpar</button>
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h3>Postagem realizada com sucesso.</h3>
+        <h4>Em alguns segundos ela aparecerá no feed.</h4>
+        <button class="btn btn-primary" (click)="resetar(); photoForm.reset()">Nova foto</button>
+    </div>
+</div>
