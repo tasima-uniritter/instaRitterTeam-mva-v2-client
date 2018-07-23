@@ -1,8 +1,8 @@
-import { Injectable } from "../../../node_modules/@angular/core";
-import { Photo } from "../../model/photo";
+import { Injectable } from "../../../../node_modules/@angular/core";
+import { Photo } from "../../../model/photo";
 
 @Injectable()
-export class PhotoService {
+export class PhotoCreateService {
 
     validar(photo: Photo) {
         this.validarObrigatoriedadeNomeUsuario(photo)

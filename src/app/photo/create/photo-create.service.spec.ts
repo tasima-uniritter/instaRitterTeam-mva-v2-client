@@ -1,12 +1,12 @@
-import { PhotoService } from './photo.service'
-import { Photo } from '../../model/photo';
-describe('PhotoTest', () => {
+import { PhotoCreateService } from './photo-create.service'
+import { Photo } from '../../../model/photo';
+describe('PhotoCreateTest', () => {
 
-  let service: PhotoService
+  let service: PhotoCreateService
   let photo: Photo
 
   beforeEach(() => {
-    service = new PhotoService
+    service = new PhotoCreateService
     photo = getFotoCompleta()
   })
 
