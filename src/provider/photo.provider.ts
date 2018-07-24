@@ -12,7 +12,7 @@ export class PhotoProvider {
   constructor(private genericProvider: GenericProvider) { }
 
   create(photo: Photo): Observable<any> {
-    return this.genericProvider.patch(this.url, photo)
+    return this.genericProvider.put(this.url, photo)
   }
 
   get(id: number): Observable<any> {

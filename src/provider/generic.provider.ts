@@ -11,7 +11,7 @@ export class GenericProvider {
   constructor(private http: Http) {
   }
 
-  patch(body, endPoint): Observable<any> {
+  put(body, endPoint): Observable<any> {
     return this.http.patch(this.url + endPoint, JSON.stringify(body), this._OPTIONS)
   }
 
