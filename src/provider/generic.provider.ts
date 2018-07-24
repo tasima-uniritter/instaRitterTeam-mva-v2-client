@@ -5,13 +5,14 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class GenericProvider {
 
-  private url: string = 'localhost:8080/';
+  private url: string = 'https://instaritterteam-mva-v2-api.herokuapp.com/';
   private _OPTIONS: RequestOptions = this.createDefaultRequestOptions();
 
   constructor(private http: Http) {
   }
 
-  post(body, endPoint): Observable<any> {
+  post(endPoint : string, body): Observable<any> {
+    console.log(this.url + endPoint)
     return this.http.post(this.url + endPoint, JSON.stringify(body), this._OPTIONS)
   }
 

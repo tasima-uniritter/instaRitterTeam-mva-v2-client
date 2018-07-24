@@ -17,7 +17,7 @@ export class PhotoCreateService {
     }
 
     private validarObrigatoriedadeImagem(photo: Photo) {
-        if (!photo.imagem)
+        if (!photo.conteudo)
             throw new Error("Selecione a imagem.")
     }
 

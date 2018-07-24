@@ -28,8 +28,7 @@ const appRoutes: Routes = [
     FormsModule,
     PhotoModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     )
   ],
   providers: [GenericProvider, PhotoProvider],

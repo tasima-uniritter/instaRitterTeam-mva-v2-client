@@ -24,15 +24,15 @@ export class PhotoComponent {
   pesquisado = false
 
   constructor(private photoProvider: PhotoProvider) {
-    this.photos = photosMock
+    //this.photos = photosMock
     this.pesquisado = true
-    //this.getAll()
+    this.getAll()
   }
 
   getAll() {
-    //this.photoProvider.getAll().subscribe(
-    //data => this.photos = data
-    //)
+    this.photoProvider.getAll().subscribe(
+    data => this.photos = data
+    )
   }
 
   delete(id: number) {

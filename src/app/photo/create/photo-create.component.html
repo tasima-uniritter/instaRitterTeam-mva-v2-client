@@ -10,6 +10,15 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="conteudo">Foto</label>
+                <input type="file" class="form-control" id="conteudo" required [(ngModel)]="model.conteudo" name="conteudo" #conteudo="ngModel" (change)="onFileChange($event)" #fileInput>
+                <div [hidden]="conteudo.valid || conteudo.pristine" class="alert alert-danger">
+                    Selecione a imagem.
+                </div>
+            </div>
+
+
             <button type="submit" class="btn btn-success" [disabled]="!photoForm.form.valid" (click)="salvar()">Salvar</button>
             <button type="button" class="btn btn-default" (click)="resetar(); photoForm.reset()">Limpar</button>
             <a class="btn btn-default" href="./posts">Voltar</a>

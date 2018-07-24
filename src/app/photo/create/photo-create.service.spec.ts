@@ -19,7 +19,7 @@ describe('PhotoCreateTest', () => {
   })
 
   it('Deve exibir mensagem de obrigatoriedade para a foto', () => {
-    photo.imagem = null
+    photo.conteudo = null
     expect(() => service.validar(photo)).toThrow(new Error("Selecione a imagem."))
   })
 
@@ -44,7 +44,7 @@ describe('PhotoCreateTest', () => {
 function getFotoCompleta(): Photo {
   let photoIdeal = new Photo
   photoIdeal.nomeUsuario = "Ronaldo Nazario."
-  photoIdeal.imagem = new Blob
+  photoIdeal.conteudo = new String
   photoIdeal.legenda = "Visitando a América Central."
   photoIdeal.data = new Date
   return photoIdeal

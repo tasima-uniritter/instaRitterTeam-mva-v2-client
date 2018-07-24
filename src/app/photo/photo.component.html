@@ -1,9 +1,9 @@
-<a class="btn btn-primary" href="./posts/new">Nova foto</a>
+<a class="btn btn-primary" href="./posts/new">Postar</a>
 
 <div id="listagemphotos" *ngIf="pesquisado">
-    <div class="label-nenhum-cliente-cadastrado centralizado" *ngIf="!photos.length">
-        Nenhuma postagem
-    </div>
+    <h3 class="label-nenhum-cliente-cadastrado centralizado" *ngIf="!photos.length">
+        Nenhuma postagem disponível.
+    </h3>
     <div *ngIf="photos.length">
         <table class="table table-striped">
             <thead>

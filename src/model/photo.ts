@@ -2,7 +2,7 @@ export class Photo {
     id: number
     legenda: string
     nomeUsuario: string
-    imagem: Blob
+    conteudo: String
     data: Date
 
 }
