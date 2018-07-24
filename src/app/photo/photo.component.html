@@ -1,2 +1,27 @@
-<h1 class="text-center">InstaRitter</h1>
-<app-photo-create></app-photo-create>
+<a class="btn btn-primary" href="./posts/new">Nova foto</a>
+
+<div id="listagemphotos" *ngIf="pesquisado">
+    <div class="label-nenhum-cliente-cadastrado centralizado" *ngIf="!photos.length">
+        Nenhuma postagem
+    </div>
+    <div *ngIf="photos.length">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Usuário</th>
+                    <th scope="col">Legenda</th>
+                    <th scope="col">Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let photo of photos">
+                    <th scope="row">{{photo.id}}</th>
+                    <td>{{photo.nomeUsuario}}</td>
+                    <td>{{photo.legenda}}</td>
+                    <td>{{photo.data}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
