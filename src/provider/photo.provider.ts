@@ -7,24 +7,23 @@ import { Photo } from '../model/photo';
 @Injectable()
 export class PhotoProvider {
 
-  private urlListar: string = 'fotos/'
-  private urlIncluirConsultarDeletar: string = 'foto/'
+  private url: string = 'fotos/'
 
   constructor(private genericProvider: GenericProvider) { }
 
   getAll(): Observable<any> {
-    return this.genericProvider.get(this.urlListar)
+    return this.genericProvider.get(this.url)
   }
 
   create(photo: Photo): Observable<any> {
-    return this.genericProvider.post(this.urlIncluirConsultarDeletar, photo)
+    return this.genericProvider.put(this.url, photo)
   }
 
   get(id: number): Observable<any> {
-    return this.genericProvider.get(this.urlIncluirConsultarDeletar + id)
+    return this.genericProvider.get(this.url + id)
   }
 
   delete(id: number): Observable<any> {
-    return this.genericProvider.delete(this.urlIncluirConsultarDeletar, id)
+    return this.genericProvider.delete(this.url, id)
   }
 }
