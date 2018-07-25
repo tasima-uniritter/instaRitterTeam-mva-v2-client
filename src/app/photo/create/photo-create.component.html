@@ -11,9 +11,9 @@
             </div>
 
             <div class="form-group">
-                <label for="conteudo">Foto</label>
-                <input type="file" class="form-control" id="conteudo" required [(ngModel)]="model.conteudo" name="conteudo" #conteudo="ngModel" (change)="onFileChange($event)" #fileInput>
-                <div [hidden]="conteudo.valid || conteudo.pristine" class="alert alert-danger">
+                <label for="uploadImagem">Foto</label>
+                <input type="file" class="form-control" id="uploadImagem" required [(ngModel)]="uploadImagem" name="uploadImagem" #fileInput="ngModel" (change)="onFileChange($event)">
+                <div [hidden]="fileInput.valid || fileInput.pristine" class="alert alert-danger">
                     Selecione a imagem.
                 </div>
             </div>

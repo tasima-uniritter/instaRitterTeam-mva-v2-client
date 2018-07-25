@@ -10,22 +10,21 @@ import { FormGroup } from '../../../../node_modules/@angular/forms';
 })
 export class PhotoCreateComponent {
 
-  form: FormGroup;
-
   model = new Photo
 
   submitted = false;
 
-  base64 : string
+  uploadImagem : any
 
-  constructor(private photoProvider: PhotoProvider){
+  constructor(private photoProvider: PhotoProvider) {
 
   }
 
   onSubmit() { this.submitted = true; }
 
   salvar() {
-    this.model.conteudo = this.base64
+
+    this.model.data = new Date
     this.photoProvider.create(this.model).subscribe(() => {
       alert("Postagem realizada com sucesso.")
     })
@@ -39,12 +38,11 @@ export class PhotoCreateComponent {
       let file = event.target.files[0];
 
       reader.readAsDataURL(file);
-      
-      reader.onload = function() {
-          console.log(btoa(reader.result))
-      };
 
-
+      reader.addEventListener("load", () => {
+        this.model.legenda   = btoa(reader.result)
+        this.model.conteudo = "ZHNhZHNhIGRzYSBkc2EgZGFzIGRzYQ=="
+      }, false);
     }
   }
 }

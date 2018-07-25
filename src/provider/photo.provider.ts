@@ -16,6 +16,7 @@ export class PhotoProvider {
   }
 
   create(photo: Photo): Observable<any> {
+    console.log(photo)
     return this.genericProvider.put(this.url, photo)
   }
 
